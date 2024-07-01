@@ -5,39 +5,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Productos 🚀</title>
-    <link rel="stylesheet" href="./static/css/estilos.css">
+    <link rel="shortcut icon" href="imagenes/logo_favicon.ico" type="image/x-icon">
+    <title>Listado de Productos</title>
+    <link rel="stylesheet" href="./static/css/estilosIndex.css">
 </head>
 
 <body>
     <header>
-        <nav class="navbar-index ">
+        <header class="header" id="cabecera"></header>
+        <!-- <nav class="navbar-index ">
             <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje">
-        </nav>
+        </nav> -->
     </header>
 
-    <div class="logo-centrado">
-        <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
-    </div>
-    <h1>Listado de Productos del Inventario</h1><br>
+    <div class="section">
+        <section id="inicio">
+            <h3>Listado de productos del pedido</h3>
 
-    <table> <!-- Se crea una tabla para mostrar los productos. -->
-        <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
-            <tr>
-                <th>Código</th>
-                <th>Descripción</th>
-                <th>Cantidad</th>                
-                <th align="right">Precio</th>
-                <th>Imagen</th>
-                <th align="right">Proveedor</th>
-                
-            </tr>
-        </thead>
-        <tbody id="tablaProductos"> </tbody>
-    </table><br>
+            <table> <!-- Se crea una tabla para mostrar los productos. -->
+                <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
+                    <tr>
+                        <th>Código</th>
+                        <th>Descripción</th>
+                        <th>Cantidad</th>                
+                        <th align="right">Precio</th>
+                        <th>Imagen</th>
+                        <th align="right">Proveedor</th>
+                        
+                    </tr>
+                </thead>
+                <tbody id="tablaProductos"> </tbody>
+            </table><br>
 
-    <div class="contenedor-centrado">
-        <a href="index.html">Menu principal</a>
+            <div class="contenedor-centrado">
+                <a href="index.html">Menu principal</a>
+            </div>
+        </section>
     </div>
     <script>
         // const URL = "http://127.0.0.1:5000/"
@@ -90,4 +93,6 @@
             });
     </script>
 </body>
+<footer id="pie"></footer>
+<script src="/static/js/head_foot.js"></script>
 </html>
