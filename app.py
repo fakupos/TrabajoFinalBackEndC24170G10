@@ -104,11 +104,11 @@ class Catalogo:
 # Cuerpo del programa
 #--------------------------------------------------------------------
 # Crear una instancia de la clase Catalogo
-catalogo = Catalogo(host='fakupos.mysql.pythonanywhere-services.com', user='fakupos', password='CaC24170', database='fakupos$miapp')
+catalogo = Catalogo(host='nacho00.mysql.pythonanywhere-services.com', user='nacho00', password='nacho44490362', database='nacho00$appTP')
 
 # Carpeta para guardar las imagenes
 # ruta_destino = './static/imagenes/'
-ruta_destino = '/home/fakupos/mysite/static/imagenes/'
+ruta_destino = '/home/nacho00/mysite/static/imagenes/'
 
 @app.route("/productos", methods=["GET"])
 def listar_productos():
