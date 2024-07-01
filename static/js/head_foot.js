@@ -16,13 +16,16 @@ let cabecera = `
                 <a href="index.html" class="link">INICIO</a>
             </li>
             <li class="li_links">
-                <a href="cabanas.html" class="link">CABAÑAS</a>
+                <a href="altas.html" class="link">CABAÑAS</a>
             </li>
             <li class="li_links">
-                <a href="servicios.html" class="link">SERVICIOS</a>
+                <a href="modificaciones.html" class="link">SERVICIOS</a>
             </li>
             <li class="li_links">
-                <a href="contacto.html" class="link">CONTACTO</a>
+                <a href="listadoEliminar.html" class="link">CONTACTO</a>
+            </li>
+            <li class="li_links">
+                <a href="listado.html" class="link">CONTACTO</a>
             </li>
         </ul>
     </nav>

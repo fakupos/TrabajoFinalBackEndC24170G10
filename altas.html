@@ -15,32 +15,43 @@
             <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje">
         </nav>
     </header>
+        <!-- <div class="logo-centrado">
+            <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
+        </div> -->
+        <div class="section">
+            <section id="inicio">
+                <h3>Alta de productos al pedido</h3>
+                <!-- <h1>Solicitud de productos a proveedores</h1><br> -->
 
-    <div class="logo-centrado">
-        <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
-    </div>
-    <h1>Eliminar Productos del Inventario</h1><br>
+                <!--enctype="multipart/form-data" es necesario para enviar archivos al back.-->
+                <form id="formulario" enctype="multipart/form-data">
 
-    <table id="productos-table"> <!-- Se crea una tabla para mostrar los productos. -->
-        <thead> <!--Encabezado de la tabla con columnas para código, descripción, cantidad, precio y acciones.-->
-            <tr>
-                <th>Código</th>
-                <th>Descripción</th>
-                <th>Cantidad</th>
-                <th align="right">Precio</th>
-                <th>Acciones</th>
-            </tr>
-        </thead>
-        <tbody>
-        </tbody>
-    </table><br>
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" name="descripcion" required><br>
 
-    <div class="contenedor-centrado">
-        <a href="index.html">Menu principal</a>
-    </div>
-    <script>
-        // const URL = "http://127.0.0.1:5000/"
-        const URL = "https://nacho00.pythonanywhere.com/"
+                    <label for="cantidad">Cantidad:</label>
+                    <input type="number" id="cantidad" name="cantidad" required><br>
+
+                    <label for="precio">Precio:</label>
+                    <input type="number" step="0.01" id="precio" name="precio" required><br>
+
+                    <label for="imagenProducto">Imagen del producto:</label>
+                    <input type="file" id="imagenProducto" name="imagen">
+
+                    <br><br>
+                    <label for="proveedorProducto">Proveedor:</label>
+                    <input type="text" id="proveedorProducto" name="proveedor">
+
+                    <button type="submit">Agregar Producto</button>
+                    <br>
+                    <a href="index.html">Menu principal</a>
+                </form>
+            </section>
+        </div>
+
+        <script>
+            // const URL = "http://127.0.0.1:5000/"
+            const URL = "https://fakupos.pythonanywhere.com/"
 
         
         // Obtiene el contenido del inventario
