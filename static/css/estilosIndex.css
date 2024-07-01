@@ -20,6 +20,63 @@ body {
     letter-spacing: .4px;
 }
 
+
+.contenedor-centrado { 
+    display:flex; 
+    width: 100%; 
+    justify-content: center; 
+    padding: 5px;
+}
+table {
+    max-width: 90%;
+    margin: 50px;
+    padding: 30px;
+    
+    text-align: left;
+}
+h3{
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+    border: 1px solid #ccc; /* Opcional: para visualizar mejor el formulario */
+    border-radius: 5px; /* Opcional: para esquinas redondeadas */
+}
+
+form label {
+    display: block; /* Asegura que las etiquetas estén en su propia línea */
+    padding: 5px 0; /* Ajusta el padding para mantener las etiquetas alineadas */
+}
+
+form input {
+    display: block; /* Asegura que los inputs estén en su propia línea */
+    width: 100%; /* Asegura que los inputs tomen el ancho completo del formulario */
+    margin:  0; /* Ajusta el margen para espacio vertical */
+    padding: 5px; /* Añade padding para mejor apariencia */
+    box-sizing: border-box; /* Incluye el padding y el borde en el tamaño total del input */
+}
+
+form button {
+    display: block; /* Asegura que el botón esté en su propia línea */
+    margin: 20px auto 0; /* Centra el botón horizontalmente */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; /* Cambia el cursor cuando se pasa sobre el botón */
+    border: none; /* Elimina el borde predeterminado */
+    background-color: #8994a1; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+form button:hover {
+    background-color: #4b89cc; /* Color de fondo del botón al pasar el mouse */
+}
+
+
+
 a {
     text-decoration: none;
 }
@@ -229,7 +286,7 @@ h2 {
     }
 }
 
-@media (min-width:768px) {
+@media (min-width:1024px) {
     .label_hamburguesa {
         display: none;
     }
