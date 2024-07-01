@@ -20,6 +20,25 @@ body {
     letter-spacing: .4px;
 }
 
+
+.contenedor-centrado { 
+    display:flex; 
+    width: 100%; 
+    justify-content: center; 
+    padding: 5px;
+}
+table {
+    max-width: 90%;
+    margin: 50px;
+    padding: 30px;
+    
+    text-align: left;
+}
+h3{
+    text-align: center;
+}
+
+
 a {
     text-decoration: none;
 }
@@ -229,7 +248,7 @@ h2 {
     }
 }
 
-@media (min-width:768px) {
+@media (min-width:1024px) {
     .label_hamburguesa {
         display: none;
     }
