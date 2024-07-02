@@ -13,19 +13,19 @@ let cabecera = `
 
         <ul class="ul_links">
             <li class="li_links">
-                <a href="index.html" class="link">INICIO</a>
+                <a href="index.html" class="link">MENU</a>
             </li>
             <li class="li_links">
-                <a href="altas.html" class="link">CABAÑAS</a>
+                <a href="altas.html" class="link">ALTA</a>
             </li>
             <li class="li_links">
-                <a href="modificaciones.html" class="link">SERVICIOS</a>
+                <a href="modificaciones.html" class="link">MODIFICACION</a>
             </li>
             <li class="li_links">
-                <a href="listadoEliminar.html" class="link">CONTACTO</a>
+                <a href="listadoEliminar.html" class="link">ELIMINACION</a>
             </li>
             <li class="li_links">
-                <a href="listado.html" class="link">CONTACTO</a>
+                <a href="listado.html" class="link">LISTADO</a>
             </li>
         </ul>
     </nav>
