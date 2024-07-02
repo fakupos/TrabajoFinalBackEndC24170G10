@@ -1,23 +1,115 @@
-#--------------------------------------------------------------------
-# Instalar con pip install Flask
 from flask import Flask, request, jsonify
-
-# Instalar con pip install flask-cors
 from flask_cors import CORS
-
-# Instalar con pip install mysql-connector-python
 import mysql.connector
-
-# Si es necesario, pip install Werkzeug
 from werkzeug.utils import secure_filename
-
-# No es necesario instalar, es parte del sistema standard de Python
+from flask_bcrypt import Bcrypt
+from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
 import os
 import time
-#--------------------------------------------------------------------
 
+#--------------------------------------------------------------------
 app = Flask(__name__)
-CORS(app)  # Esto habilitará CORS para todas las rutas
+CORS(app)
+#bcrypt = Bcrypt(app)
+#jwt = JWTManager(app)
+
+
+class User:
+    def __init__(self, host, user, password, database):
+        self.conn = mysql.connector.connect(
+            host=host,
+            user=user,
+            password=password
+        )
+        self.cursor = self.conn.cursor()
+        try:
+            self.cursor.execute(f"USE {database}")
+        except mysql.connector.Error as err:
+            if err.errno == mysql.connector.errorcode.ER_BAD_DB_ERROR:
+                self.cursor.execute(f"CREATE DATABASE {database}")
+                self.conn.database = database
+            else:
+                raise err
+
+        self.cursor.execute('''CREATE TABLE IF NOT EXISTS users (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            username VARCHAR(255) NOT NULL UNIQUE,
+            password VARCHAR(255) NOT NULL
+        )''')
+        self.conn.commit()
+        self.cursor.close()
+        self.cursor = self.conn.cursor(dictionary=True)
+
+    def register_user(self, username, password):
+        sql = "INSERT INTO users (username, password) VALUES (%s, %s)"
+        valores = (username, password)
+        self.cursor.execute(sql, valores)
+        self.conn.commit()
+        return self.cursor.lastrowid
+
+    def authenticate_user(self, username, password):
+        try:
+            sql = "SELECT * FROM users WHERE username = %s"
+            self.cursor.execute(sql, (username,))
+            user = self.cursor.fetchone()
+            if user and user['password'] == password:  
+                return user
+            return None
+        except mysql.connector.Error as err:
+            print(f"Error: {err}")
+            return None
+
+
+
+user_model = User(host='127.0.0.1', user='root', password='nacho44490362', database='user')
+
+
+
+
+@app.route("/register", methods=["POST"])
+def register():
+    username = request.json.get('username')
+    password = request.json.get('password')
+    user_id = user_model.register_user(username, password)
+    if user_id:
+        return jsonify({"message": "User registered successfully"}), 201
+    else:
+        return jsonify({"message": "Error registering user"}), 500
+
+@app.route("/login", methods=["POST"])
+def login():
+    try:
+        username = request.json.get('username')
+        password = request.json.get('password')
+        
+        # Verifica que se proporcionen tanto el nombre de usuario como la contraseña
+        if not username or not password:
+            return jsonify({"message": "Username and password are required"}), 400
+        
+        # Consulta la base de datos para encontrar al usuario
+        sql = "SELECT * FROM users WHERE username = %s"
+        user_model.cursor.execute(sql, (username,))
+        user = user_model.cursor.fetchone()
+        
+        # Verifica que el usuario exista y que la contraseña coincida
+        if user and user['password'] == password:
+            return jsonify({"message": "Login successful"}), 200
+        else:
+            return jsonify({"message": "Invalid credentials"}), 401
+    except Exception as e:
+        print(f"Error: {e}")
+        return jsonify({"message": "Internal server error"}), 500
+
+
+
+'''
+
+
+
+
+
+
+
 
 class Catalogo:
     #----------------------------------------------------------------
@@ -40,13 +132,13 @@ class Catalogo:
             else:
                 raise err
 
-        self.cursor.execute('''CREATE TABLE IF NOT EXISTS productos (
+        self.cursor.execute(CREATE TABLE IF NOT EXISTS productos (
             codigo INT AUTO_INCREMENT PRIMARY KEY,
             descripcion VARCHAR(255) NOT NULL,
             cantidad INT NOT NULL,
             precio DECIMAL(10, 2) NOT NULL,
             imagen_url VARCHAR(255),
-            proveedor INT(4))''')
+            proveedor INT(4)))
         self.conn.commit()
         
         # Cerrar el cursor inicial y abrir uno nuevo con el parámetro dictionary=True
@@ -206,3 +298,4 @@ def eliminar_producto(codigo):
 
 if __name__ == "__main__":
     app.run(debug=True)
+'''
