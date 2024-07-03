@@ -36,6 +36,45 @@ table {
 }
 h3{
     text-align: center;
+    padding: 40px;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.content {
+    flex: 1;
+}
+.section {
+    padding: 60px 0;  /* Incrementé el padding superior para mover el título más abajo */
+}
+footer {
+    padding: 20px 0;
+}
+.contenedor-centrado {
+    margin-bottom: 20px;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid #333;  /* Borde gris oscuro */
+    border-radius: 25px;  /* Botones redondeados */
+    color: #333;  /* Texto gris oscuro */
+    background-color: #fff;  /* Fondo blanco */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Sombra para dar profundidad */
+    margin-bottom: 20px;  /* Espaciado entre botones */
+}
+
+.btn:hover {
+    background-color: #333;  /* Fondo gris oscuro al pasar el mouse */
+    color: #fff;  /* Texto blanco al pasar el mouse */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);  /* Sombra más pronunciada al pasar el mouse */
 }
 
 form {

@@ -1,49 +1,36 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="imagenes/logo_favicon.ico" type="image/x-icon">
     <title>Solicitud productos CABAÑAS FANINA</title>
-    <link rel="stylesheet" href="./static/css/estilosIndex.css">    
-
+    <link rel="stylesheet" href="./static/css/estilosIndex.css">
+   
 </head>
-
 <body>
-    <header>
-        <header class="header" id="cabecera"></header>
-        <!-- <nav class="navbar-index ">
-            <img class="logo-nav" src="./static/imagenes/logos-nav.webp" alt="logo agencia de aprendizaje">
-        </nav> -->
-    </header>
+    <header class="header" id="cabecera"></header>
 
-    <!-- <div class="logo-centrado">
-         <img src="./static/imagenes/logo_Codo.jpg" alt="logo">
-        </div> -->
-    <div class="section">
-        <section id="inicio">
-            <h3>Solicitud de productos a proveedores</h3>
-            <!-- <h1>Solicitud de productos a proveedores</h1><br> -->
-            <table>
-                <tr>
-                    <td class="contenedor-centrado"><a href="altas.html">Alta de productos al pedido</a></td>
-                </tr>
-                <tr>
-                    <td class="contenedor-centrado "><a href="listado.html">Listado de productos del pedido</a></td>
-                </tr>
-                <tr>
-                    <td class="contenedor-centrado "><a href="modificaciones.html">Modificar productos del pedido</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="contenedor-centrado "><a href="listadoEliminar.html">Eliminar productos del pedido</a></td>
-                </tr>
-            </table>
+    <div class="container content">
+        <section id="inicio" class="text-center section">
+            <h3>CRUD para inventario de cabañas</h3>
+            <div class="contenedor-centrado">
+                <a href="altas.html" class="btn btn-primary">Alta de productos</a>
+            </div>
+            <div class="contenedor-centrado">
+                <a href="listado.html" class="btn btn-success">Listado de los productos</a>
+            </div>
+            <div class="contenedor-centrado">
+                <a href="modificaciones.html" class="btn btn-warning">Modificar datos de los productos</a>
+            </div>
+            <div class="contenedor-centrado">
+                <a href="listadoEliminar.html" class="btn btn-danger">Eliminar productos del inventario</a>
+            </div>
         </section>
     </div>
-</body>
-<footer id="pie"></footer>
-<script src="/static/js/head_foot.js"></script>
 
+    <footer id="pie" class="footer bg-dark text-white text-center py-3"></footer>
+
+    <script src="/static/js/head_foot.js"></script>
+</body>
 </html>

@@ -1,7 +1,7 @@
 let cabecera = `
     <nav class="navbar">
         <a href="index.html">
-            <h1 class="logo">CABAÑAS FANINA</h1>
+            <h1 class="logo">INVENTARIO CABAÑAS FANINA</h1>
         </a>
         <label class="label_hamburguesa" for="menu_hamburguesa">
             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="list_icon" viewBox="0 0 16 16">
@@ -16,17 +16,18 @@ let cabecera = `
                 <a href="index.html" class="link">INICIO</a>
             </li>
             <li class="li_links">
-                <a href="altas.html" class="link">CABAÑAS</a>
+                <a href="altas.html" class="link">ALTAS</a>
             </li>
             <li class="li_links">
-                <a href="modificaciones.html" class="link">SERVICIOS</a>
+                <a href="listado.html" class="link">LISTADO</a>
             </li>
             <li class="li_links">
-                <a href="listadoEliminar.html" class="link">CONTACTO</a>
+                <a href="modificaciones.html" class="link">MODIFICACIONES</a>
             </li>
             <li class="li_links">
-                <a href="listado.html" class="link">CONTACTO</a>
+                <a href="listadoEliminar.html" class="link">ELIMINACION</a>
             </li>
+            
         </ul>
     </nav>
 `;
