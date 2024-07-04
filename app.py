@@ -236,7 +236,7 @@ def load_user(id):
 
 @app.route('/')
 def index():
-    return redirect(url_for('login'))
+    return redirect(url_for('/auth/login.html'))
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -252,18 +252,18 @@ def login():
                 return redirect(url_for('home'))
             else:
                 flash("Invalid password...")
-                return render_template('auth/login.html')
+                return render_template('/auth/login.html')
         else:
             flash("User not found...")
-            return render_template('auth/login.html')
+            return render_template('/auth/login.html')
     else:
-        return render_template('auth/login.html')
+        return render_template('/auth/login.html')
 
 
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('login'))
+    return redirect(url_for('/auth/login.html'))
 
 
 @app.route('/home')
@@ -278,7 +278,7 @@ def protected():
 
 
 def status_401(error):
-    return redirect(url_for('login'))
+    return redirect(url_for('/auth/login.html'))
 
 
 def status_404(error):
