@@ -1,6 +1,6 @@
 let cabecera = `
     <nav class="navbar">
-        <a href="index.html">
+        <a href="home">
             <h1 class="logo">CABAÑAS FANINA</h1>
         </a>
         <label class="label_hamburguesa" for="menu_hamburguesa">
@@ -13,19 +13,22 @@ let cabecera = `
 
         <ul class="ul_links">
             <li class="li_links">
-                <a href="index.html" class="link">INICIO</a>
+                <a href="home" class="link">INICIO</a>
             </li>
             <li class="li_links">
-                <a href="altas.html" class="link">CABAÑAS</a>
+                <a href="altas" class="link">CABAÑAS</a>
             </li>
             <li class="li_links">
-                <a href="modificaciones.html" class="link">SERVICIOS</a>
+                <a href="modificaciones" class="link">SERVICIOS</a>
             </li>
             <li class="li_links">
-                <a href="listadoEliminar.html" class="link">CONTACTO</a>
+                <a href="eliminar" class="link">CONTACTO</a>
             </li>
             <li class="li_links">
-                <a href="listado.html" class="link">CONTACTO</a>
+                <a href="listado" class="link">LISTADO</a>
+            </li>
+            <li class="li_links">
+                <a href="login" class="link">LOGIN</a>
             </li>
         </ul>
     </nav>

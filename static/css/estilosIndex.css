@@ -20,6 +20,10 @@ body {
     letter-spacing: .4px;
 }
 
+.usuario{
+    text-align: center;
+}
+
 
 .contenedor-centrado { 
     display:flex; 
